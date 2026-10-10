@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sinag Cove | Beach Staycation</title>
+<meta name="description" content="Private villas and beachfront rooms for a slower weekend. Check availability and request your stay in minutes.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+--bg:#f6f0e6;--card:#fffaf2;--ink:#18302f;--mute:#5d6e6b;--deep:#0f3b3a;--coral:#c8744a;--line:rgba(24,48,47,.14);--serif:"Cormorant Garamond",Georgia,serif;--sans:"DM Sans",system-ui,sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0c1f1e;--card:#12302e;--ink:#f3ece0;--mute:#a9b9b5;--deep:#071615;--line:rgba(243,236,224,.16)}}
+:root[data-theme="dark"]{--bg:#0c1f1e;--card:#12302e;--ink:#f3ece0;--mute:#a9b9b5;--deep:#071615;--line:rgba(243,236,224,.16)}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+h1,h2,h3{font-family:var(--serif);font-weight:500;margin:0;line-height:1.05}
+.wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+.demo{background:var(--deep);color:#f3ece0;text-align:center;font-size:.8rem;padding:8px 14px;letter-spacing:.03em}
+.demo a{text-decoration:underline;text-underline-offset:3px}
+nav{position:sticky;top:0;z-index:30;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:66px}
+.logo{font-family:var(--serif);font-size:1.7rem;font-style:italic}
+nav ul{display:flex;gap:26px;list-style:none;margin:0;padding:0;font-size:.92rem}
+@media(max-width:760px){nav ul{display:none}}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--coral);color:#fff;padding:13px 24px;border-radius:999px;font-weight:600;font-size:.95rem;transition:transform .2s,filter .2s}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.06)}
+.btn.ghost{background:transparent;color:inherit;border:1px solid currentColor}
+.btn.sm{padding:10px 20px;font-size:.88rem}
+.hero{position:relative;color:#fff;overflow:hidden;background:linear-gradient(160deg,#0f3b3a 0%,#1d6a68 45%,#d9a778 100%)}
+.hero .bgimg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,22,21,.35),rgba(7,22,21,.65))}
+.hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center;min-height:calc(100vh - 110px);padding-top:56px;padding-bottom:56px}
+@media(max-width:900px){.hero .wrap{grid-template-columns:1fr;min-height:0}}
+.eyebrow{font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;opacity:.85}
+.hero h1{font-size:clamp(3rem,8vw,6rem);font-style:italic;margin:14px 0 18px}
+.hero p.lead{max-width:480px;font-size:1.08rem;opacity:.92;margin:0 0 26px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+.chips span{font-size:.8rem;padding:6px 14px;border-radius:999px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);backdrop-filter:blur(8px)}
+.book{background:var(--card);color:var(--ink);border-radius:26px;padding:24px;box-shadow:0 30px 70px rgba(0,0,0,.3)}
+.book h2{font-size:1.9rem;margin-bottom:4px}
+.book .sub{color:var(--mute);font-size:.88rem;margin:0 0 14px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+label{display:block;font-size:.74rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--mute);margin:10px 0 5px}
+input,select,textarea{width:100%;font:inherit;font-size:.96rem;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:12px;outline:none}
+input:focus,select:focus{border-color:var(--coral)}
+.sum{margin-top:14px;border-top:1px dashed var(--line);padding-top:12px;font-size:.92rem}
+.sum div{display:flex;justify-content:space-between;gap:10px;padding:2px 0;color:var(--mute)}
+.sum .tot{color:var(--ink);font-weight:600;font-size:1.1rem;border-top:1px solid var(--line);margin-top:6px;padding-top:8px}
+.msg{min-height:20px;font-size:.86rem;margin:10px 0 0;color:#b4412b}
+.msg.ok{color:#2f7a4f}
+.book .btn{width:100%;margin-top:6px}
+.fine{font-size:.76rem;color:var(--mute);text-align:center;margin:10px 0 0}
+section{padding:84px 0}
+.head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:34px}
+.head h2{font-size:clamp(2.2rem,5vw,3.6rem)}
+.head p{max-width:420px;color:var(--mute);margin:0}
+.rooms{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+.room{background:var(--card);border:1px solid var(--line);border-radius:24px;overflow:hidden;display:flex;flex-direction:column}
+.ph{position:relative;aspect-ratio:4/3;overflow:hidden}
+.ph img{width:100%;height:100%;object-fit:cover;transition:transform .8s}
+.room:hover .ph img{transform:scale(1.05)}
+.ph.empty{display:flex;align-items:flex-end;padding:16px;font-family:var(--serif);font-style:italic;font-size:1.5rem;color:#fff}
+.room .body{padding:20px;display:flex;flex-direction:column;gap:6px;flex:1}
+.room h3{font-size:1.7rem}
+.room .meta{font-size:.84rem;color:var(--mute)}
+.room .desc{font-size:.94rem;color:var(--mute);flex:1}
+.room .buy{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:10px}
+.room .price{font-weight:600}.room .price small{font-weight:400;color:var(--mute)}
+.band{background:var(--deep);color:#f3ece0}
+.band .head p{color:#b9c9c4}
+.am{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+.am div{border:1px solid rgba(243,236,224,.2);border-radius:18px;padding:18px}
+.am b{display:block;font-family:var(--serif);font-weight:500;font-size:1.35rem;margin-bottom:2px}
+.am span{font-size:.88rem;color:#b9c9c4}
+.gal{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:170px;gap:12px}
+.gal .ph{aspect-ratio:auto;border-radius:20px}
+.gal .ph:nth-child(1){grid-column:span 2;grid-row:span 2}
+.gal .ph:nth-child(4){grid-column:span 2}
+@media(max-width:760px){.gal{grid-template-columns:1fr 1fr;grid-auto-rows:140px}.gal .ph:nth-child(1){grid-row:span 1}}
+.faq{max-width:760px}
+details{border-bottom:1px solid var(--line);padding:16px 0}
+summary{cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:10px}
+summary::after{content:"+";color:var(--coral);font-size:1.3rem;line-height:1}
+details[open] summary::after{content:"\2212"}
+details p{color:var(--mute);margin:10px 0 0}
+footer{background:var(--deep);color:#f3ece0;text-align:center;padding:70px 22px 60px}
+footer h2{font-size:clamp(2rem,5vw,3.2rem);margin-bottom:20px}
+.credit{margin-top:46px;font-size:.88rem;color:rgba(243,236,224,.65)}
+.credit a{color:#fff;text-decoration:underline;text-underline-offset:3px}
+.toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,20px);opacity:0;z-index:70;background:var(--ink);color:var(--bg);padding:12px 22px;border-radius:999px;font-size:.9rem;pointer-events:none;transition:all .4s;max-width:90vw;text-align:center}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.rv{opacity:0;transform:translateY(22px);transition:opacity .7s,transform .7s}.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="demo">Sample website by <a id="c1" href="#" target="_blank" rel="noopener">Digitera Levi</a>. Booking requests here are for demonstration.</div>
+<nav><div class="wrap">
+  <a class="logo" href="#top">Sinag Cove</a>
+  <ul><li><a href="#rooms">Rooms</a></li><li><a href="#stay">The Stay</a></li><li><a href="#gallery">Gallery</a></li><li><a href="#faq">FAQ</a></li></ul>
+  <a class="btn sm" href="#book">Check availability</a>
+</div></nav>
+
+<header class="hero" id="top">
+  <video class="bgimg" id="heroVid" autoplay muted loop playsinline preload="auto" style="display:none"></video>
+  <img class="bgimg" id="heroImg" alt="" style="display:none">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">Beach staycation &middot; Private villas</div>
+      <h1>Wake up to the sound of the sea.</h1>
+      <p class="lead">Beachfront rooms and private villas for a slower weekend. Pick your dates, see your total, and request your stay in minutes.</p>
+      <a class="btn" href="#rooms">See the rooms</a>
+      <div class="chips"><span>Check-in 2:00 PM</span><span>Check-out 12:00 NN</span><span>Breakfast included</span><span>Private beach access</span></div>
+    </div>
+    <form class="book" id="book" autocomplete="off" onsubmit="return false">
+      <h2>Reserve your stay</h2>
+      <p class="sub">Choose a room and your dates. We confirm on Messenger.</p>
+      <label for="room">Room</label><select id="room"></select>
+      <div class="row">
+        <div><label for="ci">Check-in</label><input type="date" id="ci"></div>
+        <div><label for="co">Check-out</label><input type="date" id="co"></div>
+      </div>
+      <label for="guests">Guests</label><select id="guests"></select>
+      <div class="row">
+        <div><label for="nm">Full name</label><input id="nm" placeholder="Your name"></div>
+        <div><label for="mb">Mobile</label><input id="mb" inputmode="tel" placeholder="09xx xxx xxxx"></div>
+      </div>
+      <div class="sum" id="sum"><div><span>Choose your dates to see the total.</span></div></div>
+      <p class="msg" id="msg" role="status"></p>
+      <button class="btn" id="go" type="button">Request booking</button>
+      <p class="fine">A 50% GCash down payment locks your dates.</p>
+    </form>
+  </div>
+</header>
+
+<main>
+<section id="rooms"><div class="wrap">
+  <div class="head rv"><h2>Rooms &amp; villas</h2><p>Rates are per night. Friday and Saturday nights have a small weekend rate.</p></div>
+  <div class="rooms" id="roomGrid"></div>
+</div></section>
+
+<section class="band" id="stay"><div class="wrap">
+  <div class="head rv"><h2>Everything for a slow weekend</h2><p>The small things that make a short escape feel long.</p></div>
+  <div class="am rv">
+    <div><b>Private beach</b><span>Steps from your door, quiet in the mornings.</span></div>
+    <div><b>Pool</b><span>Shared, with loungers and shade.</span></div>
+    <div><b>Breakfast</b><span>Served on your veranda or by the pool.</span></div>
+    <div><b>Kayaks &amp; paddleboards</b><span>Free for guests, subject to the weather.</span></div>
+    <div><b>Fast Wi-Fi</b><span>Around the property, if you must.</span></div>
+    <div><b>Fire pit nights</b><span>Marshmallows and a view of the stars.</span></div>
+  </div>
+</div></section>
+
+<section id="gallery"><div class="wrap">
+  <div class="head rv"><h2>A look around</h2><p>Sunrise, villas and the cove.</p></div>
+  <div class="gal rv" id="gal"></div>
+</div></section>
+
+<section id="faq"><div class="wrap faq">
+  <div class="head rv"><h2>Good to know</h2></div>
+  <details><summary>How do I book?</summary><p>Pick your room and dates above, then tap Request booking. Your request is copied and Messenger opens, so you can paste it and send. We confirm your slot there.</p></details>
+  <details><summary>How does the down payment work?</summary><p>A 50% GCash down payment locks your dates. The balance is paid on arrival.</p></details>
+  <details><summary>What are the check-in and check-out times?</summary><p>Check-in is from 2:00 PM and check-out is by 12:00 NN. Early check-in and late check-out depend on availability.</p></details>
+  <details><summary>Can we bring extra guests?</summary><p>Each room includes 2 guests. Additional guests are charged per night, up to the room's maximum.</p></details>
+  <details><summary>What if the weather turns bad?</summary><p>Talk to us on Messenger. We can usually move your dates for a storm warning.</p></details>
+</div></section>
+</main>
+
+<footer>
+  <h2>Ready for the sea?</h2>
+  <a class="btn" href="#book">Check availability</a>
+  <p class="credit">Website sample by <a id="c2" href="#" target="_blank" rel="noopener">Digitera Levi</a>. Need a page like this for your resort? <a id="c3" href="#" target="_blank" rel="noopener">Message me</a>.</p>
+</footer>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+/* ============ EDIT THESE ============ */
+const MESSENGER_LINK = "https://www.messenger.com/t/118441451362301/";
+const CREDIT_LINK    = "https://digiteralevisystem.vercel.app/";
+const WEEKEND_FEE = 800;   // added to Friday and Saturday nights
+const EXTRA_FEE   = 500;   // per extra guest, per night (2 guests are included)
+const BASE_GUESTS = 2;
+const DEPOSIT     = 0.5;   // 50% down payment
+// Cloudinary URLs. Empty = soft gradient placeholder.
+const HERO_VIDEO = "";   // paste your Cloudinary .mp4 URL here (poster = IMG.hero)
+const IMG = { hero:"https://res.cloudinary.com/dqo0bc4u/image/upload/v1791642165/Private_garden_villa_at_dusk_20261010222041_hz7wpa.jpg",
+             seaview:"https://res.cloudinary.com/dqo0bc4u/image/upload/v1791642200/Seaview_bedroom_with_queen_bed_20261010221838_fwf6gw.jpg",
+             garden:"https://res.cloudinary.com/dqo0bc4u/image/upload/v1791642165/Private_garden_villa_at_dusk_20261010222041_hz7wpa.jpg",
+             beachfront:"https://res.cloudinary.com/dqo0bc4u/image/upload/v1791642164/Beachfront_suite_opening_to_sand_20261010222225_eabwgk.jpg", 
+             family:"https://res.cloudinary.com/dqo0bc4u/image/upload/v1791642207/Spacious_villa_living_dining_area_20261010222313_wysdol.jpg", g1:"", g2:"", g3:"", g4:"", g5:"", g6:"" };
+const ROOMS = [
+  {id:"seaview",    name:"Seaview Room",    max:2, rate:3800,  desc:"A bright room with a veranda facing the water. Queen bed and a rain shower.", g:["#1d6a68","#e9c58f"]},
+  {id:"garden",     name:"Garden Villa",    max:4, rate:6500,  desc:"A private villa tucked among palms with a small plunge pool and outdoor shower.", g:["#2c5b3f","#d9b66b"]},
+  {id:"beachfront", name:"Beachfront Suite",max:4, rate:9800,  desc:"Open the doors and you are on the sand. Sunrise views and a daybed on the deck.", g:["#0f3b3a","#e0875f"]},
+  {id:"family",     name:"Family Villa",    max:8, rate:14500, desc:"Two bedrooms, a full kitchen and a long dining table. Made for barkada and family.", g:["#3a4f6e","#e8b078"]}
+];
+/* ====================================== */
+const $ = id => document.getElementById(id);
+const peso = n => "\u20B1" + Math.round(n).toLocaleString("en-PH");
+const opt = (u,w) => u.replace("/upload/", "/upload/f_auto,q_auto,w_"+w+"/");
+["c1","c2"].forEach(i => $(i).href = CREDIT_LINK); $("c3").href = MESSENGER_LINK;
+if(IMG.hero){ const h=$("heroImg"); h.src=opt(IMG.hero,1800); h.style.display="block"; }
+if(HERO_VIDEO){ const v=$("heroVid"); v.src=HERO_VIDEO; v.style.display="block"; if(window.matchMedia("(prefers-reduced-motion: reduce)").matches){ v.removeAttribute("autoplay"); v.pause(); } }
+
+function ph(key,label,g,cls){
+  return IMG[key]
+    ? '<div class="ph '+cls+'"><img src="'+opt(IMG[key],900)+'" alt="'+label+'" loading="lazy"></div>'
+    : '<div class="ph empty '+cls+'" style="background:linear-gradient(150deg,'+g[0]+','+g[1]+')">'+label+'</div>';
+}
+const roomSel = $("room"), grid = $("roomGrid");
+ROOMS.forEach((r,i) => {
+  roomSel.insertAdjacentHTML("beforeend",'<option value="'+i+'">'+r.name+' ('+peso(r.rate)+'/night)</option>');
+  const el = document.createElement("article"); el.className="room rv";
+  el.innerHTML = ph(r.id,r.name,r.g,"") +
+    '<div class="body"><h3>'+r.name+'</h3><div class="meta">Up to '+r.max+' guests</div><p class="desc">'+r.desc+'</p>' +
+    '<div class="buy"><span class="price">'+peso(r.rate)+' <small>/ night</small></span><button class="btn sm" type="button" data-i="'+i+'">Select</button></div></div>';
+  grid.appendChild(el);
+});
+grid.addEventListener("click", e => {
+  const b = e.target.closest("button[data-i]"); if(!b) return;
+  roomSel.value = b.dataset.i; fillGuests(); calc();
+  $("book").scrollIntoView({behavior:"smooth",block:"center"});
+});
+const GAL=[["g1","Sunrise cove",["#d9885a","#2a6f78"]],["g2","The pool",["#1d6a68","#9fd0c8"]],["g3","Beachfront deck",["#0f3b3a","#e0875f"]],["g4","Garden villa",["#2c5b3f","#d9b66b"]],["g5","Fire pit nights",["#2b2540","#e8944f"]],["g6","Breakfast by the sea",["#3a4f6e","#e8b078"]]];
+GAL.forEach(g => $("gal").insertAdjacentHTML("beforeend", ph(g[0],g[1],g[2],"")));
+
+function fillGuests(){
+  const r = ROOMS[+roomSel.value], cur = +$("guests").value || 2, s = $("guests");
+  s.innerHTML = "";
+  for(let n=1;n<=r.max;n++) s.insertAdjacentHTML("beforeend",'<option value="'+n+'">'+n+' guest'+(n>1?'s':'')+'</option>');
+  s.value = Math.min(cur, r.max);
+}
+const iso = d => d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");
+const parse = v => { const p=v.split("-"); return new Date(+p[0],+p[1]-1,+p[2]); };
+const fmt = d => d.toLocaleDateString("en-PH",{month:"short",day:"numeric",year:"numeric"});
+const today = new Date(); today.setHours(0,0,0,0);
+$("ci").min = iso(today); $("co").min = iso(today);
+/* Demo availability: some nights are shown as booked. Replace with real data later. */
+const taken = (ri,d) => ((Math.floor(d.getTime()/86400000) + ri*3) % 11) < 2;
+
+function calc(){
+  const ri=+roomSel.value, r=ROOMS[ri], g=+$("guests").value, a=$("ci").value, b=$("co").value, sum=$("sum"), msg=$("msg");
+  msg.textContent=""; msg.className="msg";
+  if(!a||!b){ sum.innerHTML='<div><span>Choose your dates to see the total.</span></div>'; return null; }
+  const d1=parse(a), d2=parse(b);
+  if(d2<=d1){ msg.textContent="Check-out must be after check-in."; sum.innerHTML=""; return null; }
+  let nights=0, base=0, wk=0, bad=null;
+  for(let d=new Date(d1); d<d2; d.setDate(d.getDate()+1)){
+    nights++; base+=r.rate;
+    if(d.getDay()===5||d.getDay()===6) wk+=WEEKEND_FEE;
+    if(!bad && taken(ri,d)) bad=new Date(d);
+  }
+  const extra=Math.max(0,g-BASE_GUESTS)*EXTRA_FEE*nights, total=base+wk+extra;
+  let h='<div><span>'+r.name+' &times; '+nights+' night'+(nights>1?'s':'')+'</span><span>'+peso(base)+'</span></div>';
+  if(wk) h+='<div><span>Weekend rate</span><span>'+peso(wk)+'</span></div>';
+  if(extra) h+='<div><span>Extra guests</span><span>'+peso(extra)+'</span></div>';
+  h+='<div class="tot"><span>Total</span><span>'+peso(total)+'</span></div><div><span>50% down payment</span><span>'+peso(total*DEPOSIT)+'</span></div>';
+  sum.innerHTML=h;
+  if(bad){ msg.textContent=r.name+" is not available on "+fmt(bad)+". Try other dates or another room."; return null; }
+  msg.textContent="Available for your dates."; msg.className="msg ok";
+  return {r,nights,total,d1,d2,g};
+}
+["room","ci","co","guests"].forEach(i => $(i).addEventListener("change", () => { if(i==="room") fillGuests(); if(i==="ci"){ $("co").min=$("ci").value||iso(today); } calc(); }));
+fillGuests();
+
+function toast(t){ const e=$("toast"); e.textContent=t; e.classList.add("show"); clearTimeout(toast._t); toast._t=setTimeout(()=>e.classList.remove("show"),4200); }
+$("go").addEventListener("click", () => {
+  const q = calc(), msg = $("msg");
+  if(!q){ if(!msg.textContent) msg.textContent="Please choose your dates first."; return; }
+  const nm=$("nm").value.trim(), mb=$("mb").value.trim();
+  if(!nm||!mb){ msg.className="msg"; msg.textContent="Please add your name and mobile number."; return; }
+  const text = "Hi Sinag Cove! I'd like to request a booking:\n" +
+    "Room: "+q.r.name+"\nCheck-in: "+fmt(q.d1)+"\nCheck-out: "+fmt(q.d2)+" ("+q.nights+" night"+(q.nights>1?"s":"")+")\n" +
+    "Guests: "+q.g+"\nName: "+nm+"\nMobile: "+mb+"\nTotal: "+peso(q.total)+"\n50% down payment: "+peso(q.total*DEPOSIT);
+  const open = () => window.open(MESSENGER_LINK,"_blank","noopener");
+  const done = () => { toast("Request copied. Paste it in Messenger and send."); setTimeout(open,900); };
+  if(navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(done,()=>{ window.prompt("Copy your request, then paste it in Messenger:",text); open(); });
+  else { window.prompt("Copy your request, then paste it in Messenger:",text); open(); }
+});
+
+const io = new IntersectionObserver(es => es.forEach(x => { if(x.isIntersecting){ x.target.classList.add("in"); io.unobserve(x.target); } }),{threshold:.12});
+document.querySelectorAll(".rv").forEach(el => io.observe(el));
+</script>
+</body>
+</html>
